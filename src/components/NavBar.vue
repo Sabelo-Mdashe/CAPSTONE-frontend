@@ -2,7 +2,9 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#"
+          ><img src="../assets/logo.png" alt="website logo" class="logo"
+        /></a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,32 +19,36 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
+              <router-link
+                class="nav-link active"
+                aria-current="page"
+                to="/home"
+                >Home</router-link
               >
             </li>
+            <li>
+              <router-link class="nav-link" to="/movies">Movies</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/series">Series</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/register"
+                >Register</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/login">Login</router-link>
+            </li>
           </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <div>
+            <router-link to="/login">
+              <i class="fa-solid fa-right-from-bracket pe-3" type="button"></i>
+            </router-link>
+            <router-link to="/cart"
+              ><i class="fa-solid fa-cart-arrow-down" type="button"></i
+            ></router-link>
+          </div>
         </div>
       </div>
     </nav>
@@ -51,4 +57,8 @@
 <script>
 export default {};
 </script>
-<style></style>
+<style>
+.logo {
+  width: 150px;
+}
+</style>
