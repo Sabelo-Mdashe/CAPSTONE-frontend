@@ -61,4 +61,8 @@ export default {};
 .logo {
   width: 150px;
 }
+
+.nav-link {
+    text-transform: uppercase;
+}
 </style>
