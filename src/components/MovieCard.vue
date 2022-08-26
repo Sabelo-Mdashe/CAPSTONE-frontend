@@ -5,7 +5,7 @@
 export default {
   data() {},
   methods: {
-    getMovies: fetch("http://localhost:2121/movies")
+    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
       .then((res) => res.json())
       .then((data) => {
         let movies = [];
