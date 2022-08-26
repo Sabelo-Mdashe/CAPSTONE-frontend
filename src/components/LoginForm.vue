@@ -28,30 +28,32 @@
 // import { json } from "body-parser";
 
 export default {
-  // data: () => {
-  //   return {
-  //     user_email: "",
-  //     user_password: "",
-  //   };
-  // },
-  // methods: {
-  //   login(e) {
-  //     e.preventDefault();
-  //     const api_url =
-  //       "https://capstoneprojectbackend.herokuapp.com/users/login";
-  //     fetch(api_url, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         user_email: this.user_email,
-  //         user_password: this.user_password,
-  //       }),
-  //     });
-  //     console.log("working");
-  //   },
-  // },
+    
+  data: () => {
+    return {
+      user_email: "",
+      user_password: "",
+    };
+  },
+  methods: {
+    // login(e) {
+    //   e.preventDefault();
+    //   const api_url =
+    //     "http://localhost:2121/users/login";
+    //   fetch(api_url, {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       user_email: this.user_email,
+    //       user_password: this.user_password,
+    //     }),
+    //   });
+    //   console.log("working");
+    // },
+    
+  },
 };
 </script>
 <style>

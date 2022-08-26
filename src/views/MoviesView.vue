@@ -1,9 +1,17 @@
 <template>
   <div>
     <h2 class="mt-5">MOVIES</h2>
+    <MovieCard />
   </div>
 </template>
 <script>
-export default {};
+import MovieCard from "../components/MovieCard.vue";
+export default {
+  components: { MovieCard },
+};
 </script>
-<style lang=""></style>
+<style>
+h2 {
+  color: white;
+}
+</style>
