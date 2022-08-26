@@ -1,35 +1,37 @@
 <template>
-  <div class="movie d-flex"></div>
+  <div>
+    <div class="series d-flex"></div>
+  </div>
 </template>
 <script>
 export default {
   data() {},
   methods: {
-    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
+    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/series")
       .then((res) => res.json())
       .then((data) => {
-        let movies = [];
-        movies = data;
-        console.log(movies);
-        let movieContainer = document.querySelector(".movie");
+        let series = [];
+        series = data;
+        console.log(series);
+        let movieContainer = document.querySelector(".series");
         movieContainer.innerHTML = "";
-        movies.forEach((movie) => {
+        series.forEach((episode) => {
           let id;
-          id = movie.movie_id;
+          id = episode.series_id;
           movieContainer.innerHTML += `
               <div class="movie_card">
       <div class="info_section">
         <div class="movie_header">
           <img
             class="locandina"
-            src="${movie.movie_poster}"
+            src="${episode.series_poster}"
           />
-          <h3>${movie.movie_name}</h3>
-          <p class="type">${movie.movie_genre}</p>
-          <h4 class="mt-5 fs-1">R${movie.movie_price}</h4>
+          <h3>${episode.series_name}</h3>
+          <p class="type">${episode.series_genre}</p>
+          <h4 class="mt-5 fs-1">R${episode.series_price}</h4>
         </div>
       </div>
-      <div class="blur_back bright_back" style="background: url(${movie.background}); background-size: cover"></div>
+      <div class="blur_back bright_back" style="background: url(${episode.background}); background-size: cover"></div>
     </div>
           `;
         });
@@ -43,7 +45,7 @@ export default {
   margin: 0;
 }
 
-.movie {
+.series {
   flex-wrap: wrap;
 }
 
