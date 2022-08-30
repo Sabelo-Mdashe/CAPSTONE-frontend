@@ -3,6 +3,7 @@
     <div class="series d-flex"></div>
   </div>
 </template>
+
 <script>
 export default {
   data() {},
