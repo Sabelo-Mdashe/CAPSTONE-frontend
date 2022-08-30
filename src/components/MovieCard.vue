@@ -27,6 +27,10 @@ export default {
           <h3>${movie.movie_name}</h3>
           <p class="type">${movie.movie_genre}</p>
           <h4 class="mt-5 fs-1">R${movie.movie_price}</h4>
+          <div class='movie_buttons d-flex gap-5 mt-5 ps-4'>
+            <i class="fa-solid fa-circle-info fs-2" type='button'></i>
+            <i class="fa-solid fa-cart-plus fs-2" type='button'></i>
+          </div>
         </div>
       </div>
       <div class="blur_back bright_back" style="background: url(${movie.background}); background-size: cover"></div>
@@ -105,6 +109,11 @@ h4 {
   right: 0;
   background-size: cover;
   border-radius: 11px;
+}
+
+.fa-circle-info,
+.fa-cart-plus {
+  color: white;
 }
 
 @media screen and (min-width: 768px) {
