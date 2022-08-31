@@ -148,4 +148,8 @@
 <script>
 export default {};
 </script>
-<style></style>
+<style>
+.fa-circle-plus {
+  color: white;
+}
+</style>

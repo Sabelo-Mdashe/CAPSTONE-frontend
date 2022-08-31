@@ -56,7 +56,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .container {
   justify-content: center;
 }

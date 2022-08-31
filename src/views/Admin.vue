@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Admin class="mt-5"/>
+    <Admin class="mt-5" />
   </div>
 </template>
 <script>
@@ -11,4 +11,8 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+body {
+  background-color: black;
+}
+</style>

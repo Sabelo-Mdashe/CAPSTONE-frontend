@@ -146,7 +146,7 @@ label {
 .functions {
   justify-content: space-between;
   align-content: center;
-  justify-items: center;
+  /* justify-items: center; */
 }
 
 select:hover {
