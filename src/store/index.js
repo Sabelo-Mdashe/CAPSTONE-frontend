@@ -1,22 +1,43 @@
 import { createStore } from "vuex";
-// import auth from "./auth.module";
 
 export default createStore({
   state: {
-    // status, user
+    movies: null,
+    movie: null,
+    series: null,
   },
   getters: {},
   mutations: {
-    // loginSuccess,
-    // loginFailure,
-    // logout,
-    // registerSuccess,
-    // registerFailure,
+    setMovies: (state, movies) => {
+      state.movies = movies;
+    },
+
+    setMovie: (state, movie) => {
+      state.movie = movie;
+    },
+
+    setSeries: (state, series) => {
+      state.series = series;
+    },
   },
   actions: {
-    // login, logout, register
+    getMovies: async (context) => {
+      fetch("https://capstoneprojectbackend.herokuapp.com/movies")
+        .then((res) => res.json)
+        .then((movies) => context.commit("setMovies", movies));
+    },
+
+    getMovie: async (context, id) => {
+      fetch("https://capstoneprojectbackend.herokuapp.com/movies" + id)
+        .then((res) => res.json)
+        .then((movie) => context.commit("setMovie", movie));
+    },
+
+    getSeries: async (context) => {
+      fetch("https://capstoneprojectbackend.herokuapp.com/series")
+        .then((res) => res.json)
+        .then((series) => context.commit("setSeries", series));
+    },
   },
-  modules: {
-    // auth,
-  },
+  modules: {},
 });

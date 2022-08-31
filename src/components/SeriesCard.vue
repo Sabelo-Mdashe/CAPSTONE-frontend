@@ -1,5 +1,24 @@
 <template>
   <div>
+    <div class="mt-3 functions fun d-flex container">
+      <div class="pt-3">
+        <label class="fs-5 pe-2">Filter By:</label>
+        <select name="filters" id="filters" class="p-1 rounded">
+          <option value="default">Select filter</option>
+          <option value="genre">Genre</option>
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+        </select>
+      </div>
+      <div class="search">
+        <input
+          class="form-control me-2 fs-5 p-1"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </div>
+    </div>
     <div class="series d-flex"></div>
   </div>
 </template>
@@ -8,7 +27,7 @@
 export default {
   data() {},
   methods: {
-    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/series")
+    getSeries: fetch("https://capstoneprojectbackend.herokuapp.com/series")
       .then((res) => res.json())
       .then((data) => {
         let series = [];
@@ -20,9 +39,9 @@ export default {
           let id;
           id = episode.series_id;
           movieContainer.innerHTML += `
-              <div class="movie_card">
+              <div class="series_card">
       <div class="info_section">
-        <div class="movie_header">
+        <div class="series_header">
           <img
             class="locandina"
             src="${episode.series_poster}"
@@ -54,7 +73,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.movie_card {
+.series_card {
   position: relative;
   display: block;
   width: 700px;
@@ -64,7 +83,7 @@ export default {
   border-radius: 10px;
   transition: all 0.4s;
 }
-.movie_card:hover {
+.series_card:hover {
   transform: scale(1.02);
   transition: all 0.4s;
 }
@@ -76,7 +95,7 @@ export default {
   z-index: 2;
   border-radius: 10px;
 }
-.movie_header {
+.series_header {
   position: relative;
   padding: 25px;
   height: 40%;
@@ -119,13 +138,25 @@ h4 {
   color: white;
 }
 
-@media screen and (min-width: 768px) {
-  .movie_header {
-    width: 60%;
-  }
+label {
+  color: white;
+  font-weight: bold;
+}
 
-  .movie_desc {
-    width: 50%;
+.functions {
+  justify-content: space-between;
+  align-content: center;
+  justify-items: center;
+}
+
+select:hover {
+  background: #0d0d0c;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .series_header {
+    width: 60%;
   }
 
   .info_section {
@@ -139,7 +170,7 @@ h4 {
 }
 
 @media screen and (max-width: 768px) {
-  .movie_card {
+  .series_card {
     width: 95%;
     margin: 70px auto;
     min-height: 350px;
@@ -151,13 +182,9 @@ h4 {
     background-position: 50% 50% !important;
   }
 
-  .movie_header {
+  .series_header {
     width: 100%;
     margin-top: 85px;
-  }
-
-  .movie_desc {
-    width: 100%;
   }
 
   .info_section {

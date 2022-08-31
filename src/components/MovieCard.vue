@@ -1,8 +1,51 @@
 <template>
-  <div class="movie d-flex"></div>
+  <div class="mt-3 functions fun d-flex container">
+    <div class="pt-3">
+      <label class="fs-5 pe-2">Filter By:</label>
+      <select name="filters" id="filters" class="p-1 rounded">
+        <option value="default">Select filter</option>
+        <option value="genre">Genre</option>
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+      </select>
+    </div>
+    <div class="search">
+      <input
+        class="form-control me-2 fs-5 p-1"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </div>
+  </div>
+  <div class="movie d-flex">
+    <!-- <div class="movie_card">
+      <div class="info_section">
+        <div class="movie_header">
+          <img src="" alt="" class="locandina" />
+          <h3></h3>
+          <p class="type"></p>
+          <h4 class="mt-5 fs-1"></h4>
+          <div class="movie_buttons d-flex gap-5 mt-5 ps-4">
+            <i class="fa-solid fa-circle-info fs-2" type="button"></i>
+            <i class="fa-solid fa-cart-plus fs-2" type="button"></i>
+          </div>
+        </div>
+      </div>
+      <div
+        class="blur_back bright_back"
+        style="background: url(${movie.background}); background-size: cover"
+      ></div>
+    </div> -->
+  </div>
 </template>
 <script>
 export default {
+  computed: {
+    movies() {
+      return this.$store.state.movies;
+    },
+  },
   data() {},
   methods: {
     getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
@@ -113,6 +156,22 @@ h4 {
 
 .fa-circle-info,
 .fa-cart-plus {
+  color: white;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+}
+
+.functions {
+  justify-content: space-between;
+  align-content: center;
+  justify-items: center;
+}
+
+select:hover {
+  background: #0d0d0c;
   color: white;
 }
 
