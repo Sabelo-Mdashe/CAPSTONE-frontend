@@ -18,26 +18,7 @@
       />
     </div>
   </div>
-  <div class="movie d-flex">
-    <!-- <div class="movie_card">
-      <div class="info_section">
-        <div class="movie_header">
-          <img src="" alt="" class="locandina" />
-          <h3></h3>
-          <p class="type"></p>
-          <h4 class="mt-5 fs-1"></h4>
-          <div class="movie_buttons d-flex gap-5 mt-5 ps-4">
-            <i class="fa-solid fa-circle-info fs-2" type="button"></i>
-            <i class="fa-solid fa-cart-plus fs-2" type="button"></i>
-          </div>
-        </div>
-      </div>
-      <div
-        class="blur_back bright_back"
-        style="background: url(${movie.background}); background-size: cover"
-      ></div>
-    </div> -->
-  </div>
+  <div class="movie d-flex"></div>
 </template>
 <script>
 export default {
@@ -82,6 +63,26 @@ export default {
         });
       }),
   },
+
+  // TO GET AND DISPLAY ONE MOVIE
+  // STILL WORKING ON THIS FUNCTION
+
+  // getMovie: function getOneMovie(id) {
+  //   fetch(`https://capstoneprojectbackend.herokuapp.com/movies/${id}`, {
+  //     method: "GET",
+  //     headers: {
+  //       "Content-Type": "application/json; charset=UTF-8",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       movies = data;
+  //       console.log(movies);
+  //       html = `
+  //     <h1>${movie[0].movie_name}</h1>
+  //     `;
+  //     });
+  // },
 };
 </script>
 <style>

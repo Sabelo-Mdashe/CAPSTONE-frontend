@@ -74,8 +74,11 @@
               <th>EMAIL</th>
               <th>PASSWORD</th>
               <th>USER TYPE</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
             </tr>
           </thead>
+          <tbody class="users"></tbody>
         </table>
       </div>
       <div
@@ -95,8 +98,11 @@
               <th>GENRE</th>
               <th>BACKGROUND POSTER</th>
               <th>RELEASE DATE</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
             </tr>
           </thead>
+          <tbody class="movies"></tbody>
         </table>
       </div>
       <div
@@ -116,8 +122,11 @@
               <th>GENRE</th>
               <th>BACKGROUND POSTER</th>
               <th>RELEASE DATE</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
             </tr>
           </thead>
+          <tbody class="series"></tbody>
         </table>
       </div>
       <div
@@ -135,18 +144,142 @@
               <th>NAME</th>
               <th>PRICE</th>
               <th>GENRE</th>
-              <th>BACKGROUND POSTER</th>
               <th>RELEASE DATE</th>
               <th>COLLECTION PARTS</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
             </tr>
           </thead>
+          <tbody class="deals"></tbody>
         </table>
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    getUsers: fetch("https://capstoneprojectbackend.herokuapp.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        let users = [];
+        users = data;
+        console.log(users);
+        let usersContainer = document.querySelector(".users");
+        usersContainer.innerHTML = " ";
+        users.forEach((user) => {
+          let id;
+          id = user.user_id;
+          usersContainer.innerHTML += `<tr>
+            <td>${user.user_id}</td>
+            <td>${user.full_name}</td>
+            <td>${user.user_email}</td>
+            <td>${user.user_password}</td>
+            <td>${user.user_type}</td>
+            <td><i class="fa-solid fa-pen-to-square" type="button"></i></td>
+            <td><i class="fa-solid fa-trash-can" type="button"></i></td>
+            </tr>`;
+        });
+      }),
+
+    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
+      .then((res) => res.json())
+      .then((data) => {
+        let movies = [];
+        movies = data;
+        console.log(movies);
+        let movieContainer = document.querySelector(".movies");
+        movieContainer.innerHTML = " ";
+        movies.forEach((movie) => {
+          let id;
+          id = movie.movie_id;
+          movieContainer.innerHTML += `<tr>
+            <td>${movie.movie_id}</td>
+            <td><img src="${movie.movie_poster}" class="w-25" /></td>
+            <td>${movie.movie_name}</td>
+            <td>R${movie.movie_price}</td>
+            <td>${movie.movie_genre}</td>
+            <td><img src="${movie.background}" class="w-25" /></td>
+            <td>${movie.release_date}</td>
+            <td><i class="fa-solid fa-pen-to-square" type="button"></i></td>
+            <td><i class="fa-solid fa-trash-can" type="button"></i></td>
+            </tr>`;
+        });
+      }),
+
+    getSeries: fetch("https://capstoneprojectbackend.herokuapp.com/series")
+      .then((res) => res.json())
+      .then((data) => {
+        let series = [];
+        series = data;
+        console.log(series);
+        let seriesContainer = document.querySelector(".series");
+        seriesContainer.innerHTML = " ";
+        series.forEach((episode) => {
+          let id;
+          id = episode.series_id;
+          seriesContainer.innerHTML += `<tr>
+            <td>${episode.series_id}</td>
+            <td><img src="${episode.series_poster}" class="w-25" /></td>
+            <td>${episode.series_name}</td>
+            <td>R${episode.series_price}</td>
+            <td>${episode.series_genre}</td>
+            <td><img src="${episode.background}" class="w-25" /></td>
+            <td>${episode.release_date}</td>
+            <td><i class="fa-solid fa-pen-to-square" type="button"></i></td>
+            <td><i class="fa-solid fa-trash-can" type="button"></i></td>
+            </tr>`;
+        });
+      }),
+
+    getDeals: fetch("https://capstoneprojectbackend.herokuapp.com/deals")
+      .then((res) => res.json())
+      .then((data) => {
+        let deals = [];
+        deals = data;
+        console.log(deals);
+        let dealsContainer = document.querySelector(".deals");
+        dealsContainer.innerHTML = " ";
+        deals.forEach((deal) => {
+          let id;
+          id = deal.movie_id;
+          dealsContainer.innerHTML += `<tr>
+            <td>${deal.movie_id}</td>
+            <td><img src="${deal.movie_poster}" class="w-25" /></td>
+            <td>${deal.movie_name}</td>
+            <td>R${deal.movie_price}</td>
+            <td>${deal.movie_genre}</td>
+            <td>${deal.release_date}</td>
+            <td>${deal.movie_parts}</td>
+            <td><i class="fa-solid fa-pen-to-square" type="button"></i></td>
+            <td><i class="fa-solid fa-trash-can" type="button"></i></td>
+            </tr>`;
+        });
+      }),
+
+    //   TO DELETE A MOVIE
+    // *** STILL WORKING ON THE FUNCTIONALITY
+
+    // deleteMovie: (id) => {
+    //   fetch("https://capstoneprojectbackend.herokuapp.com/movies/" + id, {
+    //     method: "DELETE",
+    //   })
+    //     .then((res) => res.json)
+    //     .then((data) => {
+    //       let movies = [];
+    //       movies = data;
+    //       console.log(movies);
+    //       let id;
+    //       id = movies.movie_id;
+
+    //       if (id > -1) {
+    //         movies.splice(id, 1);
+    //       }
+    //       this.getMovies;
+    //     });
+    // },
+  },
+};
 </script>
 <style>
 .fa-circle-plus {

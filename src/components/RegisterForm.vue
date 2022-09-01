@@ -1,21 +1,26 @@
 <template>
   <div class="container">
-    <form action="submit" method="post" class="mt-5 d-flex">
+    <form @submit="register" method="post" class="mt-5 d-flex">
       <div class="d-flex gap-5">
         <div class="inputs d-flex">
-          <label>First Name:</label>
-          <input type="text" id="first_name" v-model="first_name" class="p-1" />
+          <label>Full Name:</label>
+          <input
+            type="text"
+            id="first_name"
+            v-model="user.full_name"
+            class="p-1"
+          />
         </div>
-        <div class="inputs d-flex">
+        <!-- <div class="inputs d-flex">
           <label>Last Name:</label>
           <input type="text" id="last_name" v-model="last_name" class="p-1" />
-        </div>
+        </div> -->
       </div>
       <label class="mt-5 email">Email:</label>
       <input
         type="email"
         id="user_email"
-        v-model="user_email"
+        v-model="user.user_email"
         class="p-1"
         required
       />
@@ -25,21 +30,21 @@
           <input
             type="password"
             id="user_password"
-            v-model="user_password"
+            v-model="user.user_password"
             class="p-1"
             required
           />
         </div>
-        <div class="inputs d-flex">
+        <!-- <div class="inputs d-flex">
           <label class="mt-5 confirm">Confirm Password:</label>
           <input
             type="password"
             id="user_password"
-            v-model="confirm_password"
+            v-model="password_second"
             class="p-1"
             required
           />
-        </div>
+        </div> -->
       </div>
 
       <button type="submit" class="bg-primary mt-5 rounded">Register</button>
@@ -47,7 +52,42 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      // first_name: null,
+      // last_name: null,
+      // password_first: null,
+      // password_second: null,
+      user: {
+        full_name: null,
+        user_email: null,
+        user_password: null,
+        user_type: "user",
+      },
+    };
+  },
+  methods: {
+    register(e) {
+      console.warn(this.user);
+      fetch("https://capstoneprojectbackend.herokuapp.com/users", {
+        method: "POST",
+        body: JSON.stringify({
+          full_name: this.user.full_name,
+          user_email: this.user.user_email,
+          user_password: this.user.user_password,
+          user_type: this.user.user_type,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+      e.preventDefault();
+    },
+  },
+};
 </script>
 <style>
 form,

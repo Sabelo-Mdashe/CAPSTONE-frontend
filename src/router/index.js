@@ -37,6 +37,11 @@ const routes = [
     name: "admin",
     component: () => import("../views/Admin.vue"),
   },
+  {
+    path: "/movie",
+    name: "movie",
+    component: () => import("../views/OneMovieView.vue"),
+  },
 ];
 
 const router = createRouter({
