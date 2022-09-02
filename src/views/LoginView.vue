@@ -8,4 +8,13 @@
 import LoginForm from "@/components/LoginForm.vue";
 export default { components: { LoginForm } };
 </script>
-<style></style>
+<style>
+h2{
+  color: ;
+}
+
+  body {
+  background-image: url("../assets/movies-login.jpg");
+  background-size: cover;
+}
+</style>

@@ -52,8 +52,10 @@ export default {
           <p class="type">${movie.movie_genre}</p>
           <h4 class="mt-5 fs-1">R${movie.movie_price}</h4>
           <div class='movie_buttons d-flex gap-5 mt-5 ps-4'>
-            <i class="fa-solid fa-circle-info fs-2" type='button'></i>
-            <i class="fa-solid fa-cart-plus fs-2" type='button'></i>
+            <router-link :to="{name: 'movie', params: {id: ${movie.movie_id}}}">
+              <i class="fa-solid fa-circle-info fs-2" type='button'></i>
+            </router-link>
+              <i class="fa-solid fa-cart-plus fs-2" type='button'></i>
           </div>
         </div>
       </div>

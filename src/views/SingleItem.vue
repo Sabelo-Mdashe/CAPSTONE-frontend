@@ -1,13 +1,9 @@
 <template>
-    <div>
-        
-    </div>
+  <div></div>
 </template>
 <script>
 export default {
-    
-}
+  props: ["id"],
+};
 </script>
-<style>
-    
-</style>
+<style></style>

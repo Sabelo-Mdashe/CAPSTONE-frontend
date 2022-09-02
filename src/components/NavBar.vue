@@ -19,11 +19,11 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link
+              <a
                 class="nav-link active"
                 aria-current="page"
-                to="/home"
-                >Home</router-link
+                href="#"
+                >Home</a
               >
             </li>
             <li>

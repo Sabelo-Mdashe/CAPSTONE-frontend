@@ -27,8 +27,8 @@ export default createStore({
         .then((movies) => context.commit("setMovies", movies));
     },
 
-    getMovie: async (context, id) => {
-      fetch("https://capstoneprojectbackend.herokuapp.com/movies" + id)
+    getMovie: async (context, movie_id) => {
+      fetch(`https://capstoneprojectbackend.herokuapp.com/movies/${movie_id}`)
         .then((res) => res.json)
         .then((movie) => context.commit("setMovie", movie));
     },
