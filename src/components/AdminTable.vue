@@ -65,7 +65,62 @@
         role="tabpanel"
         aria-labelledby="home-tab"
       >
-        <i class="fa-solid fa-circle-plus fs-3 mt-3" type="button"></i>
+        <!-- Button trigger modal -->
+        <i
+          class="fa-solid fa-circle-plus fs-3 mt-3 btn"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal0"
+        ></i>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal0"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ADD USER</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form @submit="addUser" class="d-flex gap-3 user-form">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    v-model="user.full_name"
+                  />
+                  <input
+                    type="email"
+                    v-model="user.user_email"
+                    placeholder="JaneDoe@gmail.com"
+                  />
+                  <input
+                    type="password"
+                    v-model="user.user_password"
+                    placeholder="password"
+                  />
+                  <input
+                    type="text"
+                    v-model="user_type"
+                    placeholder="Admin/User"
+                  />
+                  <button type="submit">Add Movie</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <table class="table table-dark table-hover mt-1">
           <thead>
             <tr>
@@ -87,7 +142,79 @@
         role="tabpanel"
         aria-labelledby="profile-tab"
       >
-        <i class="fa-solid fa-circle-plus fs-3 mt-3" type="button"></i>
+        <!-- Button trigger modal -->
+        <i
+          class="fa-solid fa-circle-plus fs-3 mt-3 add_movie btn"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        ></i>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ADD MOVIE</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form @submit="addMovie" class="d-flex gap-3 movie-form">
+                  <input
+                    type="text"
+                    placeholder="Movie Name"
+                    v-model="movie.movie_name"
+                  />
+                  <textarea
+                    v-model="movie.movie_description"
+                    placeholder="Movie Description"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                  <input
+                    type="text"
+                    placeholder="Movie Genre"
+                    v-model="movie.movie_genre"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Poster URL"
+                    v-model="movie.movie_poster"
+                  />
+                  <input type="date" v-model="movie.release_date" />
+                  <input
+                    type="text"
+                    placeholder="Movie Price"
+                    v-model="movie.movie_price"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Movie Rating"
+                    v-model="movie.movie_rating"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Background URL"
+                    v-model="movie.background"
+                  />
+                  <button type="submit">Add Movie</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <table class="table table-dark table-hover mt-1">
           <thead>
             <tr>
@@ -111,7 +238,79 @@
         role="tabpanel"
         aria-labelledby="contact-tab"
       >
-        <i class="fa-solid fa-circle-plus fs-3 mt-3" type="button"></i>
+        <!-- Button trigger modal -->
+        <i
+          class="fa-solid fa-circle-plus fs-3 mt-3 btn"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal2"
+        ></i>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal2"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">ADD SERIES</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form @submit="addSeries" class="d-flex gap-3 series-form">
+                  <input
+                    type="text"
+                    placeholder="Series Name"
+                    v-model="series.series_name"
+                  />
+                  <textarea
+                    v-model="series.series_description"
+                    placeholder="Series Description"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                  <input
+                    type="text"
+                    placeholder="Series Genre"
+                    v-model="series.series_genre"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Poster URL"
+                    v-model="series.series_poster"
+                  />
+                  <input type="date" v-model="series.release_date" />
+                  <input
+                    type="text"
+                    placeholder="Series Price"
+                    v-model="series.series_price"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Series Rating"
+                    v-model="series.series_rating"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Background URL"
+                    v-model="series.background"
+                  />
+                  <button type="submit">Add Series</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <table class="table table-dark table-hover mt-1">
           <thead>
             <tr>
@@ -158,6 +357,39 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      movie: {
+        movie_name: null,
+        movie_description: null,
+        movie_genre: null,
+        movie_poster: null,
+        release_date: null,
+        movie_price: null,
+        movie_rating: null,
+        background: null,
+      },
+
+      series: {
+        series_name: null,
+        series_description: null,
+        series_genre: null,
+        series_poster: null,
+        release_date: null,
+        series_price: null,
+        series_rating: null,
+        background: null,
+      },
+
+      user: {
+        user_id: null,
+        full_name: null,
+        user_email: null,
+        user_password: null,
+        user_type: null,
+      },
+    };
+  },
   methods: {
     getUsers: fetch("https://capstoneprojectbackend.herokuapp.com/users")
       .then((res) => res.json())
@@ -207,6 +439,7 @@ export default {
         });
       }),
 
+    // GETS AND DISPLAY SERIES IN THE TABLE
     getSeries: fetch("https://capstoneprojectbackend.herokuapp.com/series")
       .then((res) => res.json())
       .then((data) => {
@@ -257,6 +490,75 @@ export default {
         });
       }),
 
+    // ADDING A MOVIE
+
+    addMovie(e) {
+      fetch("https://capstoneprojectbackend.herokuapp.com/movies", {
+        method: "POST",
+        body: JSON.stringify({
+          movie_name: this.movie.movie_name,
+          movie_description: this.movie.movie_description,
+          movie_genre: this.movie.movie_genre,
+          movie_poster: this.movie.movie_poster,
+          release_date: this.movie.release_date,
+          movie_price: this.movie.movie_price,
+          movie_rating: this.movie.movie_rating,
+          background: this.movie.background,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+      e.preventDefault();
+    },
+
+    // ADDING A SERIES
+
+    addSeries(e) {
+      fetch("https://capstoneprojectbackend.herokuapp.com/series", {
+        method: "POST",
+        body: JSON.stringify({
+          series_name: this.series.series_name,
+          series_description: this.series.series_description,
+          series_genre: this.series.series_genre,
+          series_poster: this.series.series_poster,
+          release_date: this.series.release_date,
+          series_price: this.series.series_price,
+          series_rating: this.series.series_rating,
+          background: this.series.background,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      e.preventDefault();
+    },
+
+    // ADDING A USER
+
+    addUser(e) {
+      fetch("https://capstoneprojectbackend.herokuapp.com/users", {
+        method: "POST",
+        body: JSON.stringify({
+          user_id: this.user.user_id,
+          full_name: this.user.full_name,
+          user_email: this.user.user_email,
+          user_password: this.user.user_password,
+          user_type: this.user.user_type,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      e.preventDefault();
+    },
+
     //   TO DELETE A MOVIE
     // *** STILL WORKING ON THE FUNCTIONALITY
 
@@ -284,5 +586,11 @@ export default {
 <style>
 .fa-circle-plus {
   color: white;
+}
+
+.movie-form,
+.series-form,
+.user-form {
+  flex-direction: column;
 }
 </style>

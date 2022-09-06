@@ -22,9 +22,12 @@ export default createStore({
   },
   actions: {
     getMovies: async (context) => {
-      fetch("https://capstoneprojectbackend.herokuapp.com/movies")
+     const res = await fetch("https://capstoneprojectbackend.herokuapp.com/movies")
         .then((res) => res.json)
-        .then((movies) => context.commit("setMovies", movies));
+        .then((movies) => {
+          console.log(movies);
+          context.commit("setMovies", movies)}
+        );
     },
 
     getMovie: async (context, movie_id) => {

@@ -10,7 +10,7 @@ export default { components: { LoginForm } };
 </script>
 <style>
 h2{
-  color: ;
+  color: white;
 }
 
   body {

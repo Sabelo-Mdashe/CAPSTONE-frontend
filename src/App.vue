@@ -22,6 +22,10 @@ export default {
   color: #2c3e50;
 }
 
+body {
+  background-color: black;
+}
+
 nav a {
   font-weight: bold;
   color: #2c3e50;

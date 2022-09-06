@@ -19,12 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="#"
-                >Home</a
-              >
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li>
               <router-link class="nav-link" to="/movies">Movies</router-link>
@@ -42,12 +37,16 @@
             </li>
           </ul>
           <div>
+            <!-- <router-link class="nav-link" to="/admin"
+              ><i class="fa-solid fa-user-gear"></i
+            ></router-link> -->
             <router-link to="/login">
               <i class="fa-solid fa-right-from-bracket pe-3" type="button"></i>
             </router-link>
-            <router-link to="/cart"
-              ><i class="fa-solid fa-cart-arrow-down" type="button"></i
-            ></router-link>
+            <router-link to="/admin">
+              <!-- <i class="fa-solid fa-cart-arrow-down" type="button"></i -->
+              <i class="fa-solid fa-user-gear"></i>
+            </router-link>
           </div>
         </div>
       </div>
@@ -63,6 +62,6 @@ export default {};
 }
 
 .nav-link {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 </style>

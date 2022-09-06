@@ -1,90 +1,81 @@
 <template>
-  <div class="mt-3 functions fun d-flex container">
-    <div class="pt-3">
-      <label class="fs-5 pe-2">Filter By:</label>
-      <select name="filters" id="filters" class="p-1 rounded">
-        <option value="default">Select filter</option>
-        <option value="genre">Genre</option>
-        <option value="name">Name</option>
-        <option value="price">Price</option>
-      </select>
+  <div>
+    <div class="mt-3 functions fun d-flex container">
+      <div class="">
+        <label class="fs-5 pe-2">Filter By:</label>
+        <select name="filters" id="filters" class="p-1 rounded">
+          <option value="default">Select filter</option>
+          <option value="genre">Genre</option>
+          <option value="name">Name</option>
+          <option value="price">Price</option>
+        </select>
+      </div>
+      <div class="search">
+        <input
+          class="form-control me-2 fs-5 p-1"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </div>
     </div>
-    <div class="search">
-      <input
-        class="form-control me-2 fs-5 p-1"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
+    <div class="movie d-flex gap-5">
+      <div v-for="movie in Movies" :key="movie.movie_id">
+        <div class="movie_card">
+          <div class="info_section">
+            <div class="movie_header">
+              <img class="locandina" :src="movie.movie_poster" />
+              <h3>{{ movie.movie_name }}</h3>
+              <p class="type">{{ movie.movie_genre }}</p>
+              <p style="color: white">{{ movie.movie_rating }}
+                <br> IMDb</p>
+              
+              <h4 class="mt-5 fs-1">R{{ movie.movie_price }}</h4>
+              <div class="movie_buttons d-flex gap-5 mt-5 ps-4">
+                <router-link
+                  :to="{ name: 'movie', params: { id: movie.movie_id } }"
+                >
+                  <i class="fa-solid fa-circle-info fs-2" type="button"></i>
+                </router-link>
+                <i class="fa-solid fa-cart-plus fs-2" type="button"></i>
+              </div>
+            </div>
+          </div>
+          <div class="blur_back bright_back">
+            <img :src="movie.background" class="backgroundImg" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="movie d-flex"></div>
 </template>
 <script>
 export default {
+  mounted() {
+    this.$store.dispatch("getMovies");
+    this.GetMovies();
+  },
   computed: {
     movies() {
       return this.$store.state.movies;
     },
   },
-  data() {},
-  methods: {
-    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
-      .then((res) => res.json())
-      .then((data) => {
-        let movies = [];
-        movies = data;
-        console.log(movies);
-        let movieContainer = document.querySelector(".movie");
-        movieContainer.innerHTML = "";
-        movies.forEach((movie) => {
-          let id;
-          id = movie.movie_id;
-          movieContainer.innerHTML += `
-              <div class="movie_card">
-      <div class="info_section">
-        <div class="movie_header">
-          <img
-            class="locandina"
-            src="${movie.movie_poster}"
-          />
-          <h3>${movie.movie_name}</h3>
-          <p class="type">${movie.movie_genre}</p>
-          <h4 class="mt-5 fs-1">R${movie.movie_price}</h4>
-          <div class='movie_buttons d-flex gap-5 mt-5 ps-4'>
-            <router-link :to="{name: 'movie', params: {id: ${movie.movie_id}}}">
-              <i class="fa-solid fa-circle-info fs-2" type='button'></i>
-            </router-link>
-              <i class="fa-solid fa-cart-plus fs-2" type='button'></i>
-          </div>
-        </div>
-      </div>
-      <div class="blur_back bright_back" style="background: url(${movie.background}); background-size: cover"></div>
-    </div>
-          `;
-        });
-      }),
+  data() {
+    return {
+      Movies: null,
+    };
   },
+  methods: {
+    async GetMovies() {
+      const res = await fetch(
+        "https://capstoneprojectbackend.herokuapp.com/movies"
+      );
 
-  // TO GET AND DISPLAY ONE MOVIE
-  // STILL WORKING ON THIS FUNCTION
-
-  // getMovie: function getOneMovie(id) {
-  //   fetch(`https://capstoneprojectbackend.herokuapp.com/movies/${id}`, {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json; charset=UTF-8",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       movies = data;
-  //       console.log(movies);
-  //       html = `
-  //     <h1>${movie[0].movie_name}</h1>
-  //     `;
-  //     });
-  // },
+      const moviesdata = await res.json();
+      this.Movies = moviesdata;
+      console.log(this.Movies);
+    },
+  },
 };
 </script>
 <style>
@@ -95,6 +86,12 @@ export default {
 
 .movie {
   flex-wrap: wrap;
+  margin: 35px;
+}
+
+.backgroundImg {
+  height: min-content;
+  /* size: cover; */
 }
 
 .movie_card {

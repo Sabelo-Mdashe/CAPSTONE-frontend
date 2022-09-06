@@ -220,12 +220,12 @@
 export default {
   data() {},
   methods: {
-    getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
-      .then((res) => res.json())
-      .then((data) => {
-        let movies = [];
-        movies = data;
-        console.log(movies);
+    // getMovies: fetch("https://capstoneprojectbackend.herokuapp.com/movies")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     let movies = [];
+    //     movies = data;
+    //     console.log(movies);
         // let html = document.querySelector(".movie");
         // html.innerHTML = `<h1>${movies[0].movie_name}</h1>`
         // let movieContainer = document.querySelector(".movie");
@@ -235,9 +235,10 @@ export default {
         //   id = movie.movie_id;
         //   movieContainer.innerHTML += `<h4>${movie_name}</h4> `;
         // });
-      }),
-  },
-};
+  //     })
+  // },
+}
+}
 </script>
 <style>
 h2 {
