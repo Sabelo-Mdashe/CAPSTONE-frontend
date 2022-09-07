@@ -9,12 +9,12 @@ import LoginForm from "@/components/LoginForm.vue";
 export default { components: { LoginForm } };
 </script>
 <style>
-h2{
+h2 {
   color: white;
 }
 
-  body {
-  background-image: url("../assets/movies-login.jpg");
+body {
+  background-image: url("https://i.postimg.cc/xTXGszs0/movies-login.jpg");
   background-size: cover;
 }
 </style>

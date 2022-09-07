@@ -27,9 +27,11 @@
               <img class="locandina" :src="movie.movie_poster" />
               <h3>{{ movie.movie_name }}</h3>
               <p class="type">{{ movie.movie_genre }}</p>
-              <p style="color: white">{{ movie.movie_rating }}
-                <br> IMDb</p>
-              
+              <p style="color: white">
+                {{ movie.movie_rating }} <br />
+                IMDb
+              </p>
+
               <h4 class="mt-5 fs-1">R{{ movie.movie_price }}</h4>
               <div class="movie_buttons d-flex gap-5 mt-5 ps-4">
                 <router-link
