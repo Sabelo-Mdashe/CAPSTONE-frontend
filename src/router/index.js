@@ -28,9 +28,9 @@ const routes = [
     component: () => import("../views/LoginView.vue"),
   },
   {
-    path: "/cart",
-    name: "cart",
-    component: () => import("../views/CartView.vue"),
+    path: "/about",
+    name: "about",
+    component: () => import("../views/About.vue"),
   },
   {
     path: "/admin",
@@ -41,6 +41,11 @@ const routes = [
     path: "/movie",
     name: "movie",
     component: () => import("../views/OneMovieView.vue"),
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component: () => import("../views/ContactUs.vue"),
   },
 ];
 

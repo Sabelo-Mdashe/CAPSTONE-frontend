@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2 class="mt-5">LOGIN</h2>
+  <div class="body">
+    <h2 class="heading">LOGIN</h2>
     <LoginForm />
   </div>
 </template>
@@ -8,12 +8,17 @@
 import LoginForm from "@/components/LoginForm.vue";
 export default { components: { LoginForm } };
 </script>
-<style>
+<style scoped>
 h2 {
   color: white;
 }
 
-body {
+.heading {
+  margin-top: 100px;
+}
+
+.body {
+  min-height: 86vh;
   background-image: url("https://i.postimg.cc/xTXGszs0/movies-login.jpg");
   background-size: cover;
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mt-5">REGISTER</h2>
+    <h2 class="heading">REGISTER</h2>
     <RegisterForm />
   </div>
 </template>
@@ -8,4 +8,8 @@
 import RegisterForm from "@/components/RegisterForm.vue";
 export default { components: { RegisterForm } };
 </script>
-<style></style>
+<style>
+.heading {
+  margin-top: 100px;
+}
+</style>

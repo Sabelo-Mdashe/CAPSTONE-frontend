@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mt-5">SERIES</h2>
+    <h2 class="heading">SERIES</h2>
     <SeriesCard />
   </div>
 </template>
@@ -11,6 +11,10 @@ export default { components: { SeriesCard } };
 <style>
 h2 {
   color: white;
+}
+
+.heading {
+  margin-top: 100px;
 }
 
 html,

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mt-5">MOVIES</h2>
+    <h2 class="heading">MOVIES</h2>
     <MovieCard />
   </div>
 </template>
@@ -13,6 +13,10 @@ export default {
 <style>
 h2 {
   color: white;
+}
+
+.heading {
+  margin-top: 100px;
 }
 
 html,

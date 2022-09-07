@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <ul class="nav nav-tabs heading" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
         <button
           class="nav-link active"
@@ -586,6 +586,10 @@ export default {
 <style>
 .fa-circle-plus {
   color: white;
+}
+
+.heading {
+  margin-top: 100px;
 }
 
 .movie-form,

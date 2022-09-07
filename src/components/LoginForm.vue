@@ -1,27 +1,4 @@
 <template>
-  <!-- <div class="container d-flex"> -->
-  <!-- <form @submit="login" class="mt-5 d-flex">
-      <label class="mt-5">Email:</label>
-      <input
-        type="email"
-        id="user_email"
-        v-model="user_email"
-        class="p-1"
-        required
-      />
-      <label class="mt-5">Password</label>
-      <input
-        type="password"
-        id="user_password"
-        v-model="user_password"
-        class="p-1"
-        required
-      />
-
-      <button type="submit" class="bg-primary mt-5 rounded">Login</button>
-    </form> -->
-
-  <!-- </div> -->
   <div class="login-dark">
     <form @submit="login" method="post">
       <h2 class="sr-only">Login Form</h2>
@@ -34,6 +11,7 @@
           type="email"
           name="email"
           placeholder="Email"
+          required
         />
       </div>
       <div class="form-group mt-1">
@@ -42,6 +20,7 @@
           type="password"
           name="password"
           placeholder="Password"
+          required
         />
       </div>
       <div class="form-group">
@@ -66,8 +45,7 @@ export default {
   methods: {
     login(e) {
       e.preventDefault();
-      const api_url =
-        "http://localhost:2121/users/login";
+      const api_url = "http://localhost:2121/users/login";
       fetch(api_url, {
         method: "POST",
         headers: {
@@ -84,19 +62,6 @@ export default {
 };
 </script>
 <style scoped>
-/* .container {
-  justify-content: center;
-}
-
-form {
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-input {
-  width: 250px;
-} */
-
 .login-dark form {
   max-width: 350px;
   width: 90%;

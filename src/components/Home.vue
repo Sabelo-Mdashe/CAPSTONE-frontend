@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="movies">
-      <h2 class="mt-3">UPCOMING MOVIES</h2>
-      <div class="movie mt-3">
+      <h2 class="heading">UPCOMING MOVIES</h2>
+      <div class="movie">
         <div
           id="carouselExampleCaptions"
           class="carousel slide"
@@ -195,7 +195,7 @@ export default {
           ".carousel-comingmovies-3"
         );
 
-        movieContainer1.innerHTML = "";
+        movieContainer1.innerHTML = " ";
         movieContainer1.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -232,7 +232,7 @@ export default {
                 </div>
           `;
 
-        movieContainer2.innerHTML = "";
+        movieContainer2.innerHTML = " ";
         movieContainer2.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -270,7 +270,7 @@ export default {
                 </div>
           `;
 
-        movieContainer3.innerHTML = "";
+        movieContainer3.innerHTML = " ";
         movieContainer3.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -322,7 +322,7 @@ export default {
         let movieContainer2 = document.querySelector(".carousel-movies-2");
         let movieContainer3 = document.querySelector(".carousel-movies-3");
 
-        movieContainer1.innerHTML = "";
+        movieContainer1.innerHTML = " ";
         movieContainer1.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -363,7 +363,7 @@ export default {
                 </div>
           `;
 
-        movieContainer2.innerHTML = "";
+        movieContainer2.innerHTML = " ";
         movieContainer2.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -403,7 +403,7 @@ export default {
                 </div>
           `;
 
-        movieContainer3.innerHTML = "";
+        movieContainer3.innerHTML = " ";
         movieContainer3.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -458,7 +458,7 @@ export default {
         let seriesContainer2 = document.querySelector(".carousel-series-2");
         let seriesContainer3 = document.querySelector(".carousel-series-3");
 
-        seriesContainer1.innerHTML = "";
+        seriesContainer1.innerHTML = " ";
         seriesContainer1.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -499,7 +499,7 @@ export default {
                 </div>
           `;
 
-        seriesContainer2.innerHTML = "";
+        seriesContainer2.innerHTML = " ";
         seriesContainer2.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -539,7 +539,7 @@ export default {
                 </div>
           `;
 
-        seriesContainer3.innerHTML = "";
+        seriesContainer3.innerHTML = " ";
         seriesContainer3.innerHTML += `
           <div>
                   <div class="card_albums">
@@ -585,6 +585,10 @@ export default {
 <style>
 h2 {
   color: white;
+}
+
+.heading {
+  margin-top: 100px;
 }
 
 body {
