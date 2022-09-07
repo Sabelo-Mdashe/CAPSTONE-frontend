@@ -73,5 +73,6 @@ export default {};
 
 .nav-link:active {
   font-size: x-small;
+  transition: ease-in-out 0.2s;
 }
 </style>

@@ -49,7 +49,7 @@
         <img
           src="https://wallpaperaccess.com/full/556311.jpg"
           alt=""
-          class="img-about mt-5"
+          class="img-about mt-5 rounded"
         />
       </div>
     </div>
@@ -154,7 +154,7 @@ textarea {
 }
 
 .btn-block:hover {
-  background-color: black!important;
+  background-color: black !important;
 }
 
 .register-dark form .forgot {

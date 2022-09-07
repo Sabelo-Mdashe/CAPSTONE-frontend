@@ -75,7 +75,11 @@ export default {
 
       const moviesdata = await res.json();
       this.Movies = moviesdata;
-      console.log(this.Movies);
+      // console.log(this.Movies);
+    },
+
+    sortByGenre() {
+      console.log("this moviedata is available here");
     },
   },
 };

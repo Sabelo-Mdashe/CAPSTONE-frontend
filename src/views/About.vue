@@ -5,7 +5,7 @@
       <div class="col shadow-lg col-img rounded bg-light">
         <img
           src="https://www.xtrafondos.com/en/descargar.php?id=5458&resolucion=3300x1856"
-          class="img-about rounded"
+          class="img-about img-fluid rounded"
           alt=""
         />
       </div>
