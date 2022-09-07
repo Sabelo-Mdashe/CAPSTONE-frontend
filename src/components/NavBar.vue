@@ -70,4 +70,8 @@ export default {};
 .nav-link {
   text-transform: uppercase;
 }
+
+.nav-link:active {
+  font-size: x-small;
+}
 </style>

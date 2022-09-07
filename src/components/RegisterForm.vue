@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="login-dark">
+    <div class="register-dark">
       <form @submit="register" method="post" class="mt-5">
         <h2 class="sr-only">Login Form</h2>
         <div class="illustration">
@@ -133,7 +133,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 form,
 .inputs {
   flex-direction: column;
@@ -146,7 +146,7 @@ input {
   width: 250px;
 }
 
-.login-dark form {
+.register-dark form {
   max-width: 350px;
   width: 90%;
   background-color: #1e2833;
@@ -160,14 +160,14 @@ input {
   box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
-.login-dark .illustration {
+.register-dark .illustration {
   text-align: center;
   padding: 15px 0 20px;
   font-size: 100px;
   color: #2980ef;
 }
 
-.login-dark form .form-control {
+.register-dark form .form-control {
   background: none;
   border: none;
   border-bottom: 1px solid #434a52;
@@ -177,7 +177,7 @@ input {
   color: inherit;
 }
 
-.login-dark form .btn-primary {
+.register-dark form .btn-primary {
   background: #214a80;
   border: none;
   border-radius: 4px;
@@ -188,13 +188,13 @@ input {
   outline: none;
 }
 
-.login-dark form .btn-primary:hover,
-.login-dark form .btn-primary:active {
+.register-dark form .btn-primary:hover,
+.register-dark form .btn-primary:active {
   background: #214a80;
   outline: none;
 }
 
-.login-dark form .forgot {
+.register-dark form .forgot {
   display: block;
   text-align: center;
   font-size: 12px;
@@ -203,13 +203,13 @@ input {
   text-decoration: none;
 }
 
-.login-dark form .forgot:hover,
-.login-dark form .forgot:active {
+.register-dark form .forgot:hover,
+.register-dark form .forgot:active {
   opacity: 1;
   text-decoration: none;
 }
 
-.login-dark form .btn-primary:active {
+.register-dark form .btn-primary:active {
   transform: translateY(1px);
 }
 
