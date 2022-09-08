@@ -114,27 +114,28 @@
                     v-model="user_type"
                     placeholder="Admin/User"
                   />
-                  <button type="submit">Add Movie</button>
+                  <button type="submit">Add User</button>
                 </form>
               </div>
             </div>
           </div>
         </div>
-
-        <table class="table table-dark table-hover mt-1">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>FULL NAME</th>
-              <th>EMAIL</th>
-              <th>PASSWORD</th>
-              <th>USER TYPE</th>
-              <th>EDIT</th>
-              <th>DELETE</th>
-            </tr>
-          </thead>
-          <tbody class="users"></tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-dark table-hover mt-1">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>FULL NAME</th>
+                <th>EMAIL</th>
+                <th>PASSWORD</th>
+                <th>USER TYPE</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+              </tr>
+            </thead>
+            <tbody class="users"></tbody>
+          </table>
+        </div>
       </div>
       <div
         class="tab-pane fade"
@@ -354,6 +355,83 @@
       </div>
     </div>
   </div>
+  <!-- Button trigger modal -->
+  <!-- <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModalMovieEdit"
+  >
+    Launch demo modal
+  </button> -->
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModalMovieEdit"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form @submit="updateMovie" class="d-flex gap-3 movie-form">
+            <input
+              type="text"
+              placeholder="Movie Name"
+              v-model="movie.movie_name"
+            />
+            <textarea
+              v-model="movie.movie_description"
+              placeholder="Movie Description"
+              cols="30"
+              rows="5"
+            ></textarea>
+            <input
+              type="text"
+              placeholder="Movie Genre"
+              v-model="movie.movie_genre"
+            />
+            <input
+              type="text"
+              placeholder="Poster URL"
+              v-model="movie.movie_poster"
+            />
+            <input type="date" v-model="movie.release_date" />
+            <input
+              type="text"
+              placeholder="Movie Price"
+              v-model="movie.movie_price"
+            />
+            <input
+              type="text"
+              placeholder="Movie Rating"
+              v-model="movie.movie_rating"
+            />
+            <input
+              type="text"
+              placeholder="Background URL"
+              v-model="movie.background"
+            />
+            <button type="submit">Add Movie</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -422,7 +500,7 @@ export default {
         console.log(movies);
         let movieContainer = document.querySelector(".movies");
         movieContainer.innerHTML = " ";
-        movies.forEach((movie) => {
+        movies.forEach((movie, index) => {
           let id;
           id = movie.movie_id;
           movieContainer.innerHTML += `<tr>
@@ -433,8 +511,11 @@ export default {
             <td>${movie.movie_genre}</td>
             <td><img src="${movie.background}" class="w-25" /></td>
             <td>${movie.release_date}</td>
-            <td><i class="fa-solid fa-pen-to-square" type="button"></i></td>
-            <td><i class="fa-solid fa-trash-can" type="button"></i></td>
+            <td><i class="fa-solid fa-pen-to-square btn" 
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalMovieEdit"></i></td>
+            <td><i class="fa-solid fa-trash-can" type="button" onclick="deleteMovie(${index})"></i></td>
             </tr>`;
         });
       }),
@@ -562,24 +643,25 @@ export default {
     //   TO DELETE A MOVIE
     // *** STILL WORKING ON THE FUNCTIONALITY
 
-    // deleteMovie: (id) => {
-    //   fetch("https://capstoneprojectbackend.herokuapp.com/movies/" + id, {
-    //     method: "DELETE",
-    //   })
-    //     .then((res) => res.json)
-    //     .then((data) => {
-    //       let movies = [];
-    //       movies = data;
-    //       console.log(movies);
-    //       let id;
-    //       id = movies.movie_id;
+    deleteMovie(e, id) {
+      fetch("https://capstoneprojectbackend.herokuapp.com/movies/" + id, {
+        method: "DELETE",
+      })
+        .then((res) => res.json)
+        .then((data) => {
+          let movies = [];
+          movies = data;
+          console.log(movies);
+          let id;
+          id = movies.movie_id;
 
-    //       if (id > -1) {
-    //         movies.splice(id, 1);
-    //       }
-    //       this.getMovies;
-    //     });
-    // },
+          if (id > -1) {
+            movies.splice(id, 1);
+          }
+          // this.getMovies;
+        });
+      e.preventDefault();
+    },
   },
 };
 </script>

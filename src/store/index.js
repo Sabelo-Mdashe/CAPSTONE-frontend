@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createStore } from "vuex";
 
 export default createStore({
@@ -22,19 +23,21 @@ export default createStore({
   },
   actions: {
     getMovies: async (context) => {
-     const res = await fetch("https://capstoneprojectbackend.herokuapp.com/movies")
+      const res = await fetch(
+        "https://capstoneprojectbackend.herokuapp.com/movies"
+      )
         .then((res) => res.json)
         .then((movies) => {
           console.log(movies);
-          context.commit("setMovies", movies)}
-        );
+          context.commit("setMovies", movies);
+        });
     },
 
-    getMovie: async (context, movie_id) => {
-      fetch(`https://capstoneprojectbackend.herokuapp.com/movies/${movie_id}`)
-        .then((res) => res.json)
-        .then((movie) => context.commit("setMovie", movie));
-    },
+    // getMovie: async (context, movie_id) => {
+    //   fetch(`https://capstoneprojectbackend.herokuapp.com/movies/${movie_id}`)
+    //     .then((res) => res.json)
+    //     .then((movie) => context.commit("setMovie", movie));
+    // },
 
     getSeries: async (context) => {
       fetch("https://capstoneprojectbackend.herokuapp.com/series")
@@ -44,3 +47,15 @@ export default createStore({
   },
   modules: {},
 });
+
+export const SET_MOVIE = (state, movie) => {
+  state.movie = movie;
+};
+
+export const getMovie = ({ commit }, movie_id) => {
+  axios
+    .get(`https://capstoneprojectbackend.herokuapp.com/movies/${movie_id}`)
+    .then((res) => {
+      commit("SET_MOVIE", res.data);
+    });
+};

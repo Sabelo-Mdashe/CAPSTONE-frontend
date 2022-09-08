@@ -11,6 +11,7 @@
           type="email"
           name="email"
           placeholder="Email"
+          v-model="user.user_email"
           required
         />
       </div>
@@ -20,6 +21,7 @@
           type="password"
           name="password"
           placeholder="Password"
+          v-model="user.user_password"
           required
         />
       </div>
@@ -31,32 +33,32 @@
   </div>
 </template>
 <script>
-// import { Console } from "console";
-
-// import { json } from "body-parser";
-
 export default {
   data: () => {
     return {
-      user_email: "",
-      user_password: "",
+      user: {
+        user_email: null,
+        user_password: null,
+      },
     };
   },
   methods: {
     login(e) {
-      e.preventDefault();
-      const api_url = "http://localhost:2121/users/login";
+      const api_url =
+        "https://capstoneprojectbackend.herokuapp.com/users/login";
       fetch(api_url, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify({
           user_email: this.user_email,
           user_password: this.user_password,
         }),
-      });
-      console.log("working");
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      e.preventDefault();
     },
   },
 };

@@ -53,18 +53,21 @@
 </template>
 <script>
 export default {
+  props: ["movie"],
+
   mounted() {
-    this.$store.dispatch("getMovies");
+  //   this.$store.dispatch("getMovies");
     this.GetMovies();
   },
-  computed: {
-    movies() {
-      return this.$store.state.movies;
-    },
-  },
+  // computed: {
+  //   movies() {
+  //     return this.$store.state.movies;
+  //   },
+  // },
   data() {
     return {
       Movies: null,
+      // movie: null,
     };
   },
   methods: {
@@ -76,10 +79,6 @@ export default {
       const moviesdata = await res.json();
       this.Movies = moviesdata;
       // console.log(this.Movies);
-    },
-
-    sortByGenre() {
-      console.log("this moviedata is available here");
     },
   },
 };
