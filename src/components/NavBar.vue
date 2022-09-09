@@ -24,8 +24,29 @@
             <li>
               <router-link class="nav-link" to="/about">About</router-link>
             </li>
-            <li>
-              <router-link class="nav-link" to="/movies">Movies</router-link>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Movies
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <router-link class="dropdown-item" to="/movies"
+                    >All Movies</router-link
+                  >
+                </li>
+                <li class="nav-item">
+                  <router-link class="dropdown-item" to="/deals"
+                    >Movie Deals</router-link
+                  >
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/series">Series</router-link>

@@ -39,7 +39,7 @@
                 >
                   <i class="fa-solid fa-circle-info fs-2" type="button"></i>
                 </router-link>
-                <i class="fa-solid fa-cart-plus fs-2" type="button"></i>
+                <!-- <i class="fa-solid fa-cart-plus fs-2" type="button"></i> -->
               </div>
             </div>
           </div>
@@ -92,6 +92,10 @@ export default {
 .movie {
   flex-wrap: wrap;
   margin: 35px;
+}
+
+.movie_buttons {
+  justify-content: center;
 }
 
 .backgroundImg {

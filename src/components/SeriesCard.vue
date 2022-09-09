@@ -51,7 +51,6 @@ export default {
           <h4 class="mt-5 fs-1">R${episode.series_price}</h4>
           <div class='series_buttons d-flex gap-5 mt-5 ps-4'>
             <i class="fa-solid fa-circle-info fs-2" type='button'></i>
-            <i class="fa-solid fa-cart-plus fs-2" type='button'></i>
           </div>
         </div>
       </div>
@@ -83,6 +82,11 @@ export default {
   border-radius: 10px;
   transition: all 0.4s;
 }
+
+.series_buttons {
+  justify-content: center;
+}
+
 .series_card:hover {
   transform: scale(1.02);
   transition: all 0.4s;
