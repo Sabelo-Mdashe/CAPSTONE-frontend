@@ -335,7 +335,85 @@
         role="tabpanel"
         aria-labelledby="deals-tab"
       >
-        <i class="fa-solid fa-circle-plus fs-3 mt-3" type="button"></i>
+        <!-- Button trigger modal -->
+        <i
+          class="fa-solid fa-circle-plus fs-3 mt-3 btn"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModaldeals"
+          type="button"
+        ></i>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModaldeals"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  ADD MOVIE DEAL
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form @submit="addDeal" class="d-flex gap-3 movie-form">
+                  <input
+                    type="text"
+                    placeholder="Movie Name"
+                    v-model="deal.movie_name"
+                  />
+                  <textarea
+                    v-model="deal.movie_description"
+                    placeholder="Movie Description"
+                    cols="30"
+                    rows="5"
+                  ></textarea>
+                  <input
+                    type="text"
+                    placeholder="Movie Genre"
+                    v-model="deal.movie_genre"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Poster URL"
+                    v-model="deal.movie_poster"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Release Date"
+                    v-model="deal.release_date"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Movie Price"
+                    v-model="deal.movie_price"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Old Price"
+                    v-model="deal.old_price"
+                  />
+                  <input
+                    type="number"
+                    placeholder="Movie Parts"
+                    v-model="deal.movie_parts"
+                  />
+                  <button type="submit">Add Movie</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <table class="table table-dark table-hover mt-1">
           <thead>
             <tr>
@@ -355,15 +433,6 @@
       </div>
     </div>
   </div>
-  <!-- Button trigger modal -->
-  <!-- <button
-    type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModalMovieEdit"
-  >
-    Launch demo modal
-  </button> -->
 
   <!-- Modal -->
   <div
@@ -376,7 +445,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">UPDATE MOVIE</h5>
           <button
             type="button"
             class="btn-close"
@@ -465,6 +534,17 @@ export default {
         user_email: null,
         user_password: null,
         user_type: null,
+      },
+
+      deal: {
+        movie_name: null,
+        movie_description: null,
+        movie_genre: null,
+        movie_poster: null,
+        release_date: null,
+        movie_price: null,
+        old_price: null,
+        movie_parts: null,
       },
     };
   },
@@ -637,6 +717,30 @@ export default {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
+      e.preventDefault();
+    },
+
+    // ADDING A MOVIE DEAL
+
+    addDeal(e) {
+      fetch("https://capstoneprojectbackend.herokuapp.com/deals", {
+        method: "POST",
+        body: JSON.stringify({
+          movie_name: this.deal.movie_name,
+          movie_description: this.deal.movie_description,
+          movie_genre: this.deal.movie_genre,
+          movie_poster: this.deal.movie_poster,
+          release_date: this.deal.release_date,
+          movie_price: this.deal.movie_price,
+          old_price: this.deal.old_price,
+          movie_parts: this.deal.movie_parts,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
       e.preventDefault();
     },
 

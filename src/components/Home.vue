@@ -203,7 +203,7 @@ export default {
                       src="${comingmovies[0].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[0].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[0].movie_name}</h2>
                       <h4>${comingmovies[0].movie_genre}</h4>
                     </div>
                   </div>
@@ -214,7 +214,7 @@ export default {
                       src="${comingmovies[1].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[1].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[1].movie_name}</h2>
                       <h4>${comingmovies[1].movie_genre}</h4>
                     </div>
                   </div>
@@ -225,7 +225,7 @@ export default {
                       src="${comingmovies[2].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[2].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[2].movie_name}</h2>
                       <h4>${comingmovies[2].movie_genre}</h4>
                     </div>
                   </div>
@@ -240,7 +240,7 @@ export default {
                       src="${comingmovies[3].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[3].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[3].movie_name}</h2>
                       <h4>${comingmovies[3].movie_genre}</h4>
 
                     </div>
@@ -252,7 +252,7 @@ export default {
                       src="${comingmovies[4].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[4].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[4].movie_name}</h2>
                       <h4>${comingmovies[4].movie_genre}</h4>
                     </div>
                   </div>
@@ -263,7 +263,7 @@ export default {
                       src="${comingmovies[5].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[5].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[5].movie_name}</h2>
                       <h4>${comingmovies[5].movie_genre}</h4>
                     </div>
                   </div>
@@ -278,7 +278,7 @@ export default {
                       src="${comingmovies[6].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[6].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[6].movie_name}</h2>
                       <h4>${comingmovies[6].movie_genre}</h4>
                     </div>
                   </div>
@@ -289,7 +289,7 @@ export default {
                       src="${comingmovies[7].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[7].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[7].movie_name}</h2>
                       <h4>${comingmovies[7].movie_genre}</h4>
                     </div>
                   </div>
@@ -300,7 +300,7 @@ export default {
                       src="${comingmovies[8].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2 style="color: blue">${comingmovies[8].movie_name}</h2>
+                      <h2 style="color: black">${comingmovies[8].movie_name}</h2>
                       <h4>${comingmovies[8].movie_genre}</h4>
 
                     </div>
@@ -330,8 +330,8 @@ export default {
                       src="${movies[0].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[0].movie_name}</h2>
-                      <p>${movies[0].movie_price}</p>
+                      <h2 style="color:black">${movies[0].movie_name}</h2>
+                      <p>R${movies[0].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -342,8 +342,8 @@ export default {
                       src="${movies[1].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[1].movie_name}</h2>
-                      <p>${movies[1].movie_price}</p>
+                      <h2 style="color: black">${movies[1].movie_name}</h2>
+                      <p>R${movies[1].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -354,8 +354,8 @@ export default {
                       src="${movies[2].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[2].movie_name}</h2>
-                      <p>${movies[2].movie_price}</p>
+                      <h2 style="color: black">${movies[2].movie_name}</h2>
+                      <p>R${movies[2].movie_price}</p>
                       <button>Show Movie</button>
 
                     </div>
@@ -371,8 +371,8 @@ export default {
                       src="${movies[3].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[3].movie_name}</h2>
-                      <p>${movies[3].movie_price}</p>
+                      <h2 style="color: black">${movies[3].movie_name}</h2>
+                      <p>R${movies[3].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -383,8 +383,8 @@ export default {
                       src="${movies[4].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[4].movie_name}</h2>
-                      <p>${movies[4].movie_price}</p>
+                      <h2 style="color: black">${movies[4].movie_name}</h2>
+                      <p>R${movies[4].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -395,8 +395,8 @@ export default {
                       src="${movies[5].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[5].movie_name}</h2>
-                      <p>${movies[5].movie_price}</p>
+                      <h2 style="color: black">${movies[5].movie_name}</h2>
+                      <p>R${movies[5].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -411,8 +411,8 @@ export default {
                       src="${movies[6].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[6].movie_name}</h2>
-                      <p>${movies[6].movie_price}</p>
+                      <h2 style="color: black">${movies[6].movie_name}</h2>
+                      <p>R${movies[6].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -423,8 +423,8 @@ export default {
                       src="${movies[7].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[7].movie_name}</h2>
-                      <p>${movies[7].movie_price}</p>
+                      <h2 style="color: black">${movies[7].movie_name}</h2>
+                      <p>R${movies[7].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -435,8 +435,8 @@ export default {
                       src="${movies[8].movie_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${movies[8].movie_name}</h2>
-                      <p>${movies[8].movie_price}</p>
+                      <h2 style="color: black">${movies[8].movie_name}</h2>
+                      <p>R${movies[8].movie_price}</p>
                       <button>Show Movie</button>
                     </div>
                   </div>
@@ -466,8 +466,8 @@ export default {
                       src="${series[0].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[0].series_name}</h2>
-                      <p>${series[0].series_price}</p>
+                      <h2 style="color: black">${series[0].series_name}</h2>
+                      <p>R${series[0].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -478,8 +478,8 @@ export default {
                       src="${series[1].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[1].series_name}</h2>
-                      <p>${series[1].series_price}</p>
+                      <h2 style="color: black">${series[1].series_name}</h2>
+                      <p>R${series[1].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -490,8 +490,8 @@ export default {
                       src="${series[2].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[2].series_name}</h2>
-                      <p>${series[2].series_price}</p>
+                      <h2 style="color: black">${series[2].series_name}</h2>
+                      <p>R${series[2].series_price}</p>
                       <button>Show Series</button>
 
                     </div>
@@ -507,8 +507,8 @@ export default {
                       src="${series[3].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[3].series_name}</h2>
-                      <p>${series[3].series_price}</p>
+                      <h2 style="color: black">${series[3].series_name}</h2>
+                      <p>R${series[3].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -519,8 +519,8 @@ export default {
                       src="${series[4].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[4].series_name}</h2>
-                      <p>${series[4].series_price}</p>
+                      <h2 style="color: black">${series[4].series_name}</h2>
+                      <p>R${series[4].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -531,8 +531,8 @@ export default {
                       src="${series[5].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[5].series_name}</h2>
-                      <p>${series[5].series_price}</p>
+                      <h2 style="color: black">${series[5].series_name}</h2>
+                      <p>R${series[5].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -547,8 +547,8 @@ export default {
                       src="${series[6].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[6].series_name}</h2>
-                      <p>${series[6].series_price}</p>
+                      <h2 style="color: black">${series[6].series_name}</h2>
+                      <p>R${series[6].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -559,8 +559,8 @@ export default {
                       src="${series[7].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[7].series_name}</h2>
-                      <p>${series[7].series_price}</p>
+                      <h2 style="color: black">${series[7].series_name}</h2>
+                      <p>R${series[7].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -571,8 +571,8 @@ export default {
                       src="${series[8].series_poster}"
                     />
                     <div class="descriptions">
-                      <h2>${series[8].series_name}</h2>
-                      <p>${series[8].series_price}</p>
+                      <h2 style="color: black">${series[8].series_name}</h2>
+                      <p>R${series[8].series_price}</p>
                       <button>Show Series</button>
                     </div>
                   </div>
@@ -645,7 +645,7 @@ body {
   width: 100%;
   height: 100%;
   transition: all 0.7s ease-in-out;
-  padding: 20px;
+  /* padding: 20px; */
   box-sizing: border-box;
   clip-path: circle(0% at 100% 100%);
 }
