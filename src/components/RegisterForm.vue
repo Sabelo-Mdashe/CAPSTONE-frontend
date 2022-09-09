@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { send } from "process";
+// import { send } from "process";
 
 export default {
   data() {
@@ -93,7 +93,7 @@ export default {
           .then((data) => console.log(data));
         e.preventDefault();
       } catch (error) {
-        send(error);
+        // send(error);
         console.log(error);
       }
     },
