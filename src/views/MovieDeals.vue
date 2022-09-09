@@ -165,18 +165,6 @@ h4 {
   }
 }
 
-/* @keyframes bounce {
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-} */
-
 .ticket__content {
   width: 100%;
   position: absolute;

@@ -64,14 +64,11 @@
             </li>
           </ul>
           <div>
-            <!-- <router-link class="nav-link" to="/admin"
-              ><i class="fa-solid fa-user-gear"></i
-            ></router-link> -->
+   
             <router-link to="/login">
               <i class="fa-solid fa-right-from-bracket pe-3" type="button"></i>
             </router-link>
             <router-link to="/admin">
-              <!-- <i class="fa-solid fa-cart-arrow-down" type="button"></i -->
               <i class="fa-solid fa-user-gear"></i>
             </router-link>
           </div>

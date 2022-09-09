@@ -64,18 +64,6 @@ export default {
   },
   methods: {
     register(e) {
-      // fetch("https://capstoneprojectbackend.herokuapp.com/users", {
-      //   method: "GET",
-      //   headers: {
-      //     "Content-type": "application/json; charset=UTF-8",
-      //   },
-      // })
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     let users = [];
-      //     users = data;
-      //     console.log(users);
-      //   });
       try {
         fetch("https://capstoneprojectbackend.herokuapp.com/users", {
           method: "POST",

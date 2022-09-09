@@ -1,24 +1,5 @@
 <template>
   <div>
-    <div class="mt-3 functions fun d-flex container">
-      <div class="pt-3">
-        <label class="fs-5 pe-2">Filter By:</label>
-        <select name="filters" id="filters" class="p-1 rounded">
-          <option value="default">Select filter</option>
-          <option value="genre">Genre</option>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-        </select>
-      </div>
-      <div class="search">
-        <input
-          class="form-control me-2 fs-5 p-1"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </div>
-    </div>
     <div class="series d-flex"></div>
   </div>
 </template>

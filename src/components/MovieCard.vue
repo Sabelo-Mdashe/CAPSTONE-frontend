@@ -1,24 +1,5 @@
 <template>
   <div>
-    <div class="mt-3 functions fun d-flex container">
-      <div class="">
-        <label class="fs-5 pe-2">Filter By:</label>
-        <select name="filters" id="filters" class="p-1 rounded">
-          <option value="default">Select filter</option>
-          <option value="genre">Genre</option>
-          <option value="name">Name</option>
-          <option value="price">Price</option>
-        </select>
-      </div>
-      <div class="search">
-        <input
-          class="form-control me-2 fs-5 p-1"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-      </div>
-    </div>
     <div class="movie d-flex gap-5">
       <div v-for="movie in Movies" :key="movie.movie_id">
         <div class="movie_card">
@@ -56,14 +37,10 @@ export default {
   props: ["movie"],
 
   mounted() {
-  //   this.$store.dispatch("getMovies");
+    //   this.$store.dispatch("getMovies");
     this.GetMovies();
   },
-  // computed: {
-  //   movies() {
-  //     return this.$store.state.movies;
-  //   },
-  // },
+
   data() {
     return {
       Movies: null,
@@ -79,6 +56,15 @@ export default {
       const moviesdata = await res.json();
       this.Movies = moviesdata;
       // console.log(this.Movies);
+    },
+
+    searchMovies() {
+      const searchInput = document.querySelector("[data-search]");
+
+      searchInput.addEventListener("input", (e) => {
+        const value = e.target.value;
+        console.log(value);
+      });
     },
   },
 };
