@@ -35,9 +35,15 @@
       </div>
     </div>
   </div>
+  <Footer class="fixed-bottom" />
 </template>
 <script>
-export default {};
+import Footer from "@/components/Footer.vue";
+export default {
+  components: {
+    Footer,
+  },
+};
 </script>
 <style scoped>
 .heading {

@@ -3,10 +3,12 @@
     <h2 class="heading">SERIES</h2>
     <SeriesCard />
   </div>
+  <Footer />
 </template>
 <script>
 import SeriesCard from "@/components/SeriesCard.vue";
-export default { components: { SeriesCard } };
+import Footer from "@/components/Footer.vue";
+export default { components: { SeriesCard, Footer } };
 </script>
 <style>
 h2 {

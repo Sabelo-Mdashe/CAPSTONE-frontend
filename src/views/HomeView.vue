@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-    <Landing class="mt-5"/>
+    <Landing class="mt-5" />
   </div>
+  <Footer />
 </template>
 
 <!-- <script>
@@ -15,10 +16,12 @@ export default { components: { Home } };
 <script>
 // @ is an alias to /src
 import Landing from "@/components/Home.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
     Landing,
+    Footer,
   },
 };
 </script>

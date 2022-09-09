@@ -3,11 +3,13 @@
     <h2 class="heading">MOVIES</h2>
     <MovieCard />
   </div>
+  <Footer />
 </template>
 <script>
 import MovieCard from "../components/MovieCard.vue";
+import Footer from "@/components/Footer.vue";
 export default {
-  components: { MovieCard },
+  components: { MovieCard, Footer },
 };
 </script>
 <style>

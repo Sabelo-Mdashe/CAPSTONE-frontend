@@ -3,10 +3,12 @@
     <h2 class="heading">LOGIN</h2>
     <LoginForm />
   </div>
+  <Footer class="fixed-bottom" />
 </template>
 <script>
 import LoginForm from "@/components/LoginForm.vue";
-export default { components: { LoginForm } };
+import Footer from "@/components/Footer.vue";
+export default { components: { LoginForm, Footer } };
 </script>
 <style scoped>
 h2 {
